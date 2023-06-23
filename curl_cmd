@@ -1,0 +1,28 @@
+
+command for check we have to attach 
+
+
+
+-------------------------------------------------get session token-----------------------------------------------------------------------
+
+curl -X POST https://ocapistg.netgear.com/api/v2/system/admin/session -H 'Cache-Control: no-cache' -H 'Content-Type: application/json' -d '{"email": "shubham.singh@netgear.com","password": "Netgear@2019","duration": 0}'
+
+
+
+-----------------------------------------------check services attached to roleid-----------------------------------------------
+
+curl -X GET 'https://ocapicep-dev.netgear.com/api/v2/system/role/18?related=role_service_access_by_role_id' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'x-dreamfactory-session-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQyLCJ1c2VyX2lkIjo0MiwiZW1haWwiOiJwcmFiaGF0LnNoYXJtYUBuZXRnZWFyLmNvbSIsImZvcmV2ZXIiOmZhbHNlLCJpc3MiOiJodHRwOi8vb2NhcGljZXAtZGV2Lm5ldGdlYXIuY29tL2FwaS92Mi9zeXN0ZW0vYWRtaW4vc2Vzc2lvbiIsImlhdCI6MTU5MTI4MTAwNywiZXhwIjoxNTkxMjg0NjA3LCJuYmYiOjE1OTEyODEwMDcsImp0aSI6IlZCNUYxRmV5aVBjeFJmUjcifQ.VDbAtTaL_ANOb4_PkuEDTB016B1Sx9HtUzxy434x_ac'
+
+
+https://ocapistg.netgear.com/dreamfactory/dist/index.html
+https://ocapi-payments-cres-stg.netgear.com/dreamfactory/dist/index.html
+
+
+-----------------------------------------------role update-------------------------------------------
+
+curl --location --request PATCH 'https://ocapi-payments-cres.netgear.com/api/v2/system/role/2?related=role_service_access_by_role_id' --header 'Content-Type: application/json' --header 'X-DreamFactory-Session-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjE1LCJ1c2VyX2lkIjoxNSwiZW1haWwiOiJzdW1pdC5kYWxhbEBuZXRnZWFyLmNvbSIsImZvcmV2ZXIiOmZhbHNlLCJpc3MiOiJodHRwOi8vb2NhcGktcGF5bWVudHMtY3Jlcy5uZXRnZWFyLmNvbS9hcGkvdjIvc3lzdGVtL2FkbWluL3Nlc3Npb24iLCJpYXQiOjE1Nzk0MDM3MjgsImV4cCI6MTU3OTQwNzMyOCwibmJmIjoxNTc5NDAzNzI4LCJqdGkiOiIzWnBkcXNLQ1N6ZU9FeXdhIn0.v3yH86dJGiRwaWtNp3dtgCSMvW7q-mE0UCFaMlvZZK4' --data-raw '{"role_service_access_by_role_id": [{"verb_mask": 31,"requestor_mask": 3,"component": "*","service_id": 262}]}'
+
+
+-----------------------------------------------------------------------------------------------------
+
+
